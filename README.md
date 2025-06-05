@@ -1,6 +1,6 @@
 # Flog
 
-[![go report card](https://goreportcard.com/badge/github.com/mingrammer/flog)](https://goreportcard.com/report/github.com/mingrammer/flog) [![travis ci](https://travis-ci.com/mingrammer/flog.svg?branch=master)](https://travis-ci.com/mingrammer/flog) [![docker download](https://img.shields.io/docker/pulls/mingrammer/flog.svg)](https://hub.docker.com/r/mingrammer/flog)
+[![go report card](https://goreportcard.com/badge/github.com/mingrammer/flog)](https://goreportcard.com/report/github.com/mingrammer/flog) [![docker download](https://img.shields.io/docker/pulls/mingrammer/flog.svg)](https://hub.docker.com/r/mingrammer/flog)
 
 flog is a fake log generator for common log formats such as apache-common, apache error and RFC3164 syslog.
 
