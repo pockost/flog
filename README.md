@@ -43,6 +43,8 @@ Options:
                            - apache_common (default)
                            - apache_combined
                            - apache_error
+                           - sshd_success
+                           - sshd_error
                            - rfc3164
                            - rfc5424
                            - json

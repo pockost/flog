@@ -122,6 +122,10 @@ func NewLog(format string, t time.Time) string {
 		return NewApacheCombinedLog(t)
 	case "apache_error":
 		return NewApacheErrorLog(t)
+  case "sshd_success":
+    return NewSSHDSuccessLog(t)
+  case "sshd_error":
+    return NewSSHDErrorLog(t)
 	case "rfc3164":
 		return NewRFC3164Log(t)
 	case "rfc5424":

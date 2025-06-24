@@ -23,6 +23,8 @@ Options:
                            - apache_common (default)
                            - apache_combined
                            - apache_error
+                           - sshd_success
+                           - sshd_error
                            - rfc3164
                            - rfc5424
                            - json
@@ -45,7 +47,7 @@ Options:
   -l, --loop               loop output forever until killed.
 `
 
-var validFormats = []string{"apache_common", "apache_combined", "apache_error", "rfc3164", "rfc5424", "common_log", "json"}
+var validFormats = []string{"apache_common", "apache_combined", "apache_error", "sshd_error", "sshd_success", "rfc3164", "rfc5424", "common_log", "json"}
 var validTypes = []string{"stdout", "log", "gz"}
 
 // Option defines log generator options

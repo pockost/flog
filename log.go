@@ -15,6 +15,8 @@ const (
 	ApacheCombinedLog = "%s - %s [%s] \"%s %s %s\" %d %d \"%s\" \"%s\""
 	// ApacheErrorLog : [{timestamp}] [{module}:{severity}] [pid {pid}:tid {thread-id}] [client %{client}:{port}] %{message}
 	ApacheErrorLog = "[%s] [%s:%s] [pid %d:tid %d] [client %s:%d] %s"
+  // SSHDSuccessLog : RFC3164Log : with success message
+  // SSHDErrorLog : RFC3164Log : with error message
 	// RFC3164Log : <priority>{timestamp} {hostname} {application}[{pid}]: {message}
 	RFC3164Log = "<%d>%s %s %s[%d]: %s"
 	// RFC5424Log : <priority>{version} {iso-timestamp} {hostname} {application} {pid} {message-id} {structured-data} {message}
@@ -83,6 +85,30 @@ func NewRFC3164Log(t time.Time) string {
 		gofakeit.Number(1, 10000),
 		gofakeit.HackerPhrase(),
 	)
+}
+
+func NewSSHDErrorLog(t time.Time) string {
+  return fmt.Sprintf(
+    RFC3164Log,
+    gofakeit.Number(0, 191),
+    t.Format(RFC3164),
+    strings.ToLower(gofakeit.Username()),
+    gofakeit.Word(),
+    gofakeit.Number(1, 10000),
+    RandSSHDErrorLog(),
+  )
+}
+
+func NewSSHDSuccessLog(t time.Time) string {
+  return fmt.Sprintf(
+    RFC3164Log,
+    gofakeit.Number(0, 191),
+    t.Format(RFC3164),
+    strings.ToLower(gofakeit.Username()),
+    gofakeit.Word(),
+    gofakeit.Number(1, 10000),
+    RandSSHDSuccessLog(),
+  )
 }
 
 // NewRFC5424Log creates a log string with syslog (RFC5424) format
